@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Parcial2_AP1
+namespace Parcial2_AP1.UI.Consultas
 {
-    public partial class Form1 : Form
+    public partial class cFactura : Form
     {
-        public Form1()
+        public cFactura()
         {
             InitializeComponent();
         }
