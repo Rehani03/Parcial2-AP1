@@ -1,6 +1,6 @@
 ﻿namespace Parcial2_AP1.UI.Registros
 {
-    partial class rFactura
+    partial class rRegistro
     {
         /// <summary>
         /// Required designer variable.

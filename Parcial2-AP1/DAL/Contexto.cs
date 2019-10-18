@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Parcial2_AP1.Entidades;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -10,6 +11,7 @@ namespace Parcial2_AP1.DAL
 {
     public class Contexto : DbContext
     {
+        public DbSet<Categoria> Categorias {get; set;}
         public Contexto() : base("ConStr")
         {
 

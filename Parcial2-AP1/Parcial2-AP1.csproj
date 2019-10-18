@@ -59,6 +59,7 @@
     <Compile Include="BLL\IRepository.cs" />
     <Compile Include="BLL\RepositorioBase.cs" />
     <Compile Include="DAL\Contexto.cs" />
+    <Compile Include="Entidades\Categoria.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,11 +80,11 @@
     <Compile Include="UI\Registros\rCategoria.Designer.cs">
       <DependentUpon>rCategoria.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Registros\rFactura.cs">
+    <Compile Include="UI\Registros\rRegistro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Registros\rFactura.Designer.cs">
-      <DependentUpon>rFactura.cs</DependentUpon>
+    <Compile Include="UI\Registros\rRegistro.Designer.cs">
+      <DependentUpon>rRegistro.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -104,8 +105,8 @@
     <EmbeddedResource Include="UI\Registros\rCategoria.resx">
       <DependentUpon>rCategoria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Registros\rFactura.resx">
-      <DependentUpon>rFactura.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Registros\rRegistro.resx">
+      <DependentUpon>rRegistro.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -123,7 +124,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DAL\Scripts\" />
-    <Folder Include="Entidades\" />
     <Folder Include="UI\Reportes\" />
   </ItemGroup>
   <ItemGroup>
