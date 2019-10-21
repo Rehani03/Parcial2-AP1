@@ -58,8 +58,11 @@
   <ItemGroup>
     <Compile Include="BLL\IRepository.cs" />
     <Compile Include="BLL\RepositorioBase.cs" />
+    <Compile Include="BLL\RepositorioVenta.cs" />
     <Compile Include="DAL\Contexto.cs" />
-    <Compile Include="Entidades\Categoria.cs" />
+    <Compile Include="Entidades\Servicio.cs" />
+    <Compile Include="Entidades\DetalleVenta.cs" />
+    <Compile Include="Entidades\Venta.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,17 +77,17 @@
     <Compile Include="UI\Consultas\cFactura.Designer.cs">
       <DependentUpon>cFactura.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Registros\rCategoria.cs">
+    <Compile Include="UI\Registros\rServicio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Registros\rCategoria.Designer.cs">
-      <DependentUpon>rCategoria.cs</DependentUpon>
+    <Compile Include="UI\Registros\rServicio.Designer.cs">
+      <DependentUpon>rServicio.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Registros\rRegistro.cs">
+    <Compile Include="UI\Registros\rVenta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Registros\rRegistro.Designer.cs">
-      <DependentUpon>rRegistro.cs</DependentUpon>
+    <Compile Include="UI\Registros\rVenta.Designer.cs">
+      <DependentUpon>rVenta.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -102,11 +105,11 @@
     <EmbeddedResource Include="UI\Consultas\cFactura.resx">
       <DependentUpon>cFactura.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Registros\rCategoria.resx">
-      <DependentUpon>rCategoria.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Registros\rServicio.resx">
+      <DependentUpon>rServicio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Registros\rRegistro.resx">
-      <DependentUpon>rRegistro.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Registros\rVenta.resx">
+      <DependentUpon>rVenta.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

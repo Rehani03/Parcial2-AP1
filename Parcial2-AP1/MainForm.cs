@@ -21,14 +21,14 @@ namespace Parcial2_AP1
 
         private void RegistrarFacturaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rRegistro factura = new rRegistro();
+            rVenta factura = new rVenta();
             factura.MdiParent = this;
             factura.Show();
         }
 
         private void RegistrarCategoriaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rCategoria categoria = new rCategoria();
+            rServicio categoria = new rServicio();
             categoria.MdiParent = this;
             categoria.Show();
         }

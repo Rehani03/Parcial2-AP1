@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace Parcial2_AP1.Entidades
 {
-    public class Categoria
+    public class Servicio
     {
         [Key]
         public int CategoriaID { get; set; }
         public string Descripcion { get; set; }
 
-        public Categoria()
+        public Servicio()
         {
 
         }

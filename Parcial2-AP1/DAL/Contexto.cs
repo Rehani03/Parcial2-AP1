@@ -11,7 +11,9 @@ namespace Parcial2_AP1.DAL
 {
     public class Contexto : DbContext
     {
-        public DbSet<Categoria> Categorias {get; set;}
+        public DbSet<Servicio> Categorias {get; set;}
+        public DbSet<Venta> Venta { get; set; }
+
         public Contexto() : base("ConStr")
         {
 

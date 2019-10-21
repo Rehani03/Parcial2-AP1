@@ -12,10 +12,10 @@ using System.Windows.Forms;
 
 namespace Parcial2_AP1.UI.Registros
 {
-    public partial class rCategoria : Form
+    public partial class rServicio : Form
     {
         
-        public rCategoria()
+        public rServicio()
         {
             InitializeComponent();
         }
@@ -27,16 +27,16 @@ namespace Parcial2_AP1.UI.Registros
             DescripciontextBox.Text = string.Empty;
         }
 
-        private Categoria LlenaClase()
+        private Servicio LlenaClase()
         {
-            Categoria categoria = new Categoria();
+            Servicio categoria = new Servicio();
             categoria.CategoriaID = Convert.ToInt32(IDnumericUpDown.Value);
             categoria.Descripcion = DescripciontextBox.Text;
 
             return categoria;
         }
 
-        private void LlenaCampos(Categoria c)
+        private void LlenaCampos(Servicio c)
         {
             IDnumericUpDown.Value = c.CategoriaID;
             DescripciontextBox.Text = c.Descripcion;
@@ -57,8 +57,8 @@ namespace Parcial2_AP1.UI.Registros
 
         private bool Existe()
         {
-            RepositorioBase<Categoria> repositorio = new RepositorioBase<Categoria>();
-            Categoria c = repositorio.Buscar(Convert.ToInt32(IDnumericUpDown.Value));
+            RepositorioBase<Servicio> repositorio = new RepositorioBase<Servicio>();
+            Servicio c = repositorio.Buscar(Convert.ToInt32(IDnumericUpDown.Value));
             return (c != null);
         }
 
@@ -73,9 +73,9 @@ namespace Parcial2_AP1.UI.Registros
             if (!Validar())
                 return;
             bool paso;
-            Categoria categoria = new Categoria();
+            Servicio categoria = new Servicio();
             categoria = LlenaClase();
-            RepositorioBase<Categoria> repositorio = new RepositorioBase<Categoria>();
+            RepositorioBase<Servicio> repositorio = new RepositorioBase<Servicio>();
 
             if (IDnumericUpDown.Value == 0)
             {
@@ -104,8 +104,8 @@ namespace Parcial2_AP1.UI.Registros
 
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
-            Categoria categoria = new Categoria();
-            RepositorioBase<Categoria>  repositorio = new RepositorioBase<Categoria>();
+            Servicio categoria = new Servicio();
+            RepositorioBase<Servicio>  repositorio = new RepositorioBase<Servicio>();
             int ID = Convert.ToInt32(IDnumericUpDown.Value);
             categoria = repositorio.Buscar(ID);
 
@@ -122,7 +122,7 @@ namespace Parcial2_AP1.UI.Registros
         {
             bool paso;
             int ID = Convert.ToInt32(IDnumericUpDown.Value);
-            RepositorioBase<Categoria>  repositorio = new RepositorioBase<Categoria>();
+            RepositorioBase<Servicio>  repositorio = new RepositorioBase<Servicio>();
 
             if (!Existe())
             {

@@ -61,15 +61,15 @@
             // registrarFacturaToolStripMenuItem
             // 
             this.registrarFacturaToolStripMenuItem.Name = "registrarFacturaToolStripMenuItem";
-            this.registrarFacturaToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
-            this.registrarFacturaToolStripMenuItem.Text = "Registro";
+            this.registrarFacturaToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.registrarFacturaToolStripMenuItem.Text = "Registro de Ventas";
             this.registrarFacturaToolStripMenuItem.Click += new System.EventHandler(this.RegistrarFacturaToolStripMenuItem_Click);
             // 
             // registrarCategoriaToolStripMenuItem
             // 
             this.registrarCategoriaToolStripMenuItem.Name = "registrarCategoriaToolStripMenuItem";
-            this.registrarCategoriaToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
-            this.registrarCategoriaToolStripMenuItem.Text = "Registro de Categoria";
+            this.registrarCategoriaToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.registrarCategoriaToolStripMenuItem.Text = "Registro de Servicios";
             this.registrarCategoriaToolStripMenuItem.Click += new System.EventHandler(this.RegistrarCategoriaToolStripMenuItem_Click);
             // 
             // consultasToolStripMenuItem
@@ -83,8 +83,8 @@
             // consultarFacturaToolStripMenuItem
             // 
             this.consultarFacturaToolStripMenuItem.Name = "consultarFacturaToolStripMenuItem";
-            this.consultarFacturaToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
-            this.consultarFacturaToolStripMenuItem.Text = "Consultar Factura";
+            this.consultarFacturaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.consultarFacturaToolStripMenuItem.Text = "Consultar Venta";
             this.consultarFacturaToolStripMenuItem.Click += new System.EventHandler(this.ConsultarFacturaToolStripMenuItem_Click);
             // 
             // MainForm

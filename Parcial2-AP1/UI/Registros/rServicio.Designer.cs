@@ -1,6 +1,6 @@
 ﻿namespace Parcial2_AP1.UI.Registros
 {
-    partial class rCategoria
+    partial class rServicio
     {
         /// <summary>
         /// Required designer variable.
@@ -130,7 +130,7 @@
             // 
             this.MyerrorProvider.ContainerControl = this;
             // 
-            // rCategoria
+            // rServicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -144,8 +144,8 @@
             this.Controls.Add(this.Descripcionlabel);
             this.Controls.Add(this.CategoriaIDlabel);
             this.MaximizeBox = false;
-            this.Name = "rCategoria";
-            this.Text = "Registro de Categoria";
+            this.Name = "rServicio";
+            this.Text = "Registro de Servicios";
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyerrorProvider)).EndInit();
             this.ResumeLayout(false);
