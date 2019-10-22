@@ -25,7 +25,7 @@ namespace Parcial2_AP1.UI.Registros
 
         private void Limpiar()
         {
-            MyerrorProvider.Clear();
+            MyerrorProvider.Clear();      
             IDnumericUpDown.Value = 0;
             FechadateTimePicker.Value = DateTime.Now;
             EstudiantetextBox.Text = string.Empty;
@@ -36,6 +36,7 @@ namespace Parcial2_AP1.UI.Registros
             TotaltextBox.Text = string.Empty;
             this.Detalle = new List<DetalleVenta>();
             CargarGrid();
+            MyerrorProvider.Clear();
         }
 
         private void CargarGrid()
@@ -141,6 +142,8 @@ namespace Parcial2_AP1.UI.Registros
         private bool ValidarAgregar()
         {
             bool paso = true;
+            int cantidad = 0;
+            decimal precio = 0;
             MyerrorProvider.Clear();
             if(ServiciocomboBox.Text == "")
             {
@@ -162,7 +165,7 @@ namespace Parcial2_AP1.UI.Registros
             {
                 try
                 {
-                    int cantidad = Convert.ToInt32(CantidadtextBox.Text);
+                    cantidad = Convert.ToInt32(CantidadtextBox.Text);
                 }
                 catch (Exception)
                 {
@@ -181,13 +184,25 @@ namespace Parcial2_AP1.UI.Registros
             {
                 try
                 {
-                    decimal precio = Convert.ToInt32(PreciotextBox.Text);
+                    precio = Convert.ToInt32(PreciotextBox.Text);
                 }
                 catch (Exception)
                 {
                     MyerrorProvider.SetError(PreciotextBox, "Este debe ser numerico.");
                     paso = false;
                 }
+            }
+
+            if (cantidad < 0)
+            {
+                MyerrorProvider.SetError(CantidadtextBox, "Este campo debe ser mayor a cero.");
+                paso = false;
+            }
+
+            if (precio < 0)
+            {
+                MyerrorProvider.SetError(PreciotextBox, "Este debe ser mayor a cero.");
+                paso = false;
             }
 
 
@@ -309,6 +324,75 @@ namespace Parcial2_AP1.UI.Registros
                     MessageBox.Show("No se pudo eliminar la venta", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private bool ValidarDosCampos()
+        {
+            bool paso = true;
+            int cantidad = 0;
+            decimal precio = 0;
+            
+            if (string.IsNullOrWhiteSpace(CantidadtextBox.Text))
+            {
+                MyerrorProvider.SetError(CantidadtextBox, "Este campo no puede estar vacio.");
+                paso = false;
+            }
+            else
+            {
+                try
+                {
+                    cantidad = Convert.ToInt32(CantidadtextBox.Text);
+                }
+                catch (Exception)
+                {
+                    MyerrorProvider.SetError(CantidadtextBox, "Este debe ser numerico.");
+                    paso = false;
+                }
+            }
+
+            if (string.IsNullOrWhiteSpace(PreciotextBox.Text))
+            {
+
+                MyerrorProvider.SetError(PreciotextBox, "Este campo no puede estar vacio.");
+                paso = false;
+            }
+            else
+            {
+                try
+                {
+                    precio = Convert.ToInt32(PreciotextBox.Text);
+                }
+                catch (Exception)
+                {
+                    MyerrorProvider.SetError(PreciotextBox, "Este debe ser numerico.");
+                    paso = false;
+                }
+            }
+
+            if (cantidad < 0)
+            {
+                MyerrorProvider.SetError(CantidadtextBox, "Este campo debe ser mayor a cero.");
+                paso = false;
+            }
+
+            if (precio < 0)
+            {
+                MyerrorProvider.SetError(PreciotextBox, "Este campo  debe ser mayor a cero.");
+                paso = false;
+            }
+            return paso;
+        }
+
+        private void PreciotextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (!ValidarDosCampos())
+                return;
+
+            int cantidad = Convert.ToInt32(CantidadtextBox.Text);
+            decimal precio = Convert.ToDecimal(PreciotextBox.Text);
+            decimal importe = cantidad * precio;
+
+            ImportetextBox.Text = importe.ToString();
         }
     }
 }

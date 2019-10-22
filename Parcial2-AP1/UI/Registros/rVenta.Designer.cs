@@ -244,6 +244,7 @@
             this.PreciotextBox.Name = "PreciotextBox";
             this.PreciotextBox.Size = new System.Drawing.Size(62, 20);
             this.PreciotextBox.TabIndex = 3;
+            this.PreciotextBox.TextChanged += new System.EventHandler(this.PreciotextBox_TextChanged);
             // 
             // CantidadtextBox
             // 
