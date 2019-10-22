@@ -20,6 +20,7 @@ namespace Parcial2_AP1.UI.Registros
         {
             InitializeComponent();
             this.Detalle = new List<DetalleVenta>();
+            this.DetalledataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             CargarServicios();
         }
 
@@ -43,6 +44,8 @@ namespace Parcial2_AP1.UI.Registros
         {
             DetalledataGridView.DataSource = null;
             DetalledataGridView.DataSource = this.Detalle;
+            DetalledataGridView.Columns["DetalleVentaID"].Visible = false;
+            DetalledataGridView.Columns["VentaID"].Visible = false;
         }
 
         private void CargarServicios()
@@ -73,20 +76,20 @@ namespace Parcial2_AP1.UI.Registros
             EstudiantetextBox.Text = v.Estudiante;
             FechadateTimePicker.Value = v.Fecha;
             TotaltextBox.Text = v.Total.ToString();
+            Total = v.Total;
             this.Detalle = v.Servicios;
             CargarGrid();
         }
 
         private bool Existe()
         {
-            bool paso;
 
-            RepositorioBase<Servicio> repositorio = new RepositorioBase<Servicio>();
-            Servicio servicio = new Servicio();
+            RepositorioBase<Venta> repositorio = new RepositorioBase<Venta>();
+            Venta venta = new Venta();
             int ID = Convert.ToInt32(IDnumericUpDown.Value);
-            servicio = repositorio.Buscar(ID);
+            venta = repositorio.Buscar(ID);
 
-            return (servicio != null);
+            return (venta != null);
         }
 
 
@@ -115,8 +118,11 @@ namespace Parcial2_AP1.UI.Registros
                 return;
             if (DetalledataGridView.Rows.Count > 0 && DetalledataGridView.CurrentRow != null)
             {
-                
-                this.Detalle.RemoveAt(DetalledataGridView.CurrentRow.Index);
+                var ImporteEliminado = DetalledataGridView.CurrentRow.Cells[5].Value;
+                decimal eliminado = Convert.ToDecimal(ImporteEliminado);
+                Total -= eliminado;
+                TotaltextBox.Text = Total.ToString();
+                this.Detalle.RemoveAt(DetalledataGridView.CurrentRow.Index);     
                 CargarGrid();
             }
         }
@@ -328,6 +334,7 @@ namespace Parcial2_AP1.UI.Registros
 
         private bool ValidarDosCampos()
         {
+            MyerrorProvider.Clear();
             bool paso = true;
             int cantidad = 0;
             decimal precio = 0;
@@ -387,7 +394,7 @@ namespace Parcial2_AP1.UI.Registros
         {
             if (!ValidarDosCampos())
                 return;
-
+            MyerrorProvider.Clear();
             int cantidad = Convert.ToInt32(CantidadtextBox.Text);
             decimal precio = Convert.ToDecimal(PreciotextBox.Text);
             decimal importe = cantidad * precio;

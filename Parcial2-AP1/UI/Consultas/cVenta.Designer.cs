@@ -1,6 +1,6 @@
 ﻿namespace Parcial2_AP1.UI.Consultas
 {
-    partial class cFactura
+    partial class cVenta
     {
         /// <summary>
         /// Required designer variable.

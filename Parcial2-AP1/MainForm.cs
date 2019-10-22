@@ -35,7 +35,7 @@ namespace Parcial2_AP1
 
         private void ConsultarFacturaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            cFactura factura = new cFactura();
+            cVenta factura = new cVenta();
             factura.MdiParent = this;
             factura.Show();
         }

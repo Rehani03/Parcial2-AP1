@@ -204,6 +204,7 @@
             // 
             // Serviciopanel
             // 
+            this.Serviciopanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Serviciopanel.Controls.Add(this.Agregarbutton);
             this.Serviciopanel.Controls.Add(this.ImportetextBox);
             this.Serviciopanel.Controls.Add(this.PreciotextBox);

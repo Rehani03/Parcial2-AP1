@@ -12,9 +12,9 @@ using Parcial2_AP1.BLL;
 
 namespace Parcial2_AP1.UI.Consultas
 {
-    public partial class cFactura : Form
+    public partial class cVenta : Form
     {
-        public cFactura()
+        public cVenta()
         {
             InitializeComponent();
         }
@@ -48,7 +48,7 @@ namespace Parcial2_AP1.UI.Consultas
                         break;
                 }
                 //Fecha
-                listado = listado.Where(p => p.Fecha >= DesdedateTimePicker.Value.Date && p.Fecha <= HastadateTimePicker.Value.Date).ToList();
+               //listado = listado.Where(p => p.Fecha >= DesdedateTimePicker.Value.Date && p.Fecha <= HastadateTimePicker.Value.Date).ToList();
             }
             else
             {
